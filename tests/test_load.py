@@ -9,21 +9,21 @@ class TestSdnParser(unittest.TestCase):
     """
     @classmethod
     def setUpClass(cls):
-        cls.loader = load.sdn(url="./tests/sdn_advanced.xml")
+        cls.loader = load.sdn(url="./tests/test.xml")
 
     def test_date_of_issue(self):
         """ testing issue date
         """
-        self.assertEqual(self.loader.date_of_issue['date_of_issue'], "2024-02-08")
+        self.assertEqual(self.loader.date_of_issue['date_of_issue'], "2024-02-23")
 
     def test_individual_list(self):
         """ testing indivisual list
         """
         ind_list = self.loader.individual_list()
-        self.assertEqual(len(ind_list), 15627)
-    
+        self.assertEqual(len(ind_list), 58)
+
     def test_organization_list(self):
         """ testing organization list
         """
         org_list = self.loader.organization_list()
-        self.assertEqual(len(org_list), 16315)
+        self.assertEqual(len(org_list), 29)
